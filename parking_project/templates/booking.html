@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Parking Slot{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+
+        <!-- Card -->
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h3 class="mb-0">
+                    <i class="fa-solid fa-car"></i> Parking Slot Booking
+                </h3>
+            </div>
+
+            <div class="card-body p-4">
+
+                <!-- Booking Form -->
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="row g-3">
+
+                        <!-- Name -->
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+                        </div>
+
+                        <!-- Vehicle Number -->
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle Number</label>
+                            <input type="text" name="vehicle_no" class="form-control" placeholder="GJ-01-AB-1234" required>
+                        </div>
+
+                        <!-- Vehicle Type -->
+                        <div class="col-md-6">
+                            <label class="form-label">Vehicle Type</label>
+                            <select name="vehicle_type" class="form-select" required>
+                                <option value="">Select Vehicle Type</option>
+                                <option>Two Wheeler</option>
+                                <option>Four Wheeler</option>
+                                <option>Electric Vehicle</option>
+                            </select>
+                        </div>
+
+                        <!-- Slot -->
+                        <div class="col-md-6">
+                            <label class="form-label">Parking Slot</label>
+                            <select name="slot" class="form-select" required>
+                                <option value="">Select Slot</option>
+                                <option>A1</option>
+                                <option>A2</option>
+                                <option>B1</option>
+                                <option>B2</option>
+                            </select>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="col-md-6">
+                            <label class="form-label">Parking Date</label>
+                            <input type="date" name="date" class="form-control" required>
+                        </div>
+
+                        <!-- Time In -->
+                        <div class="col-md-6">
+                            <label class="form-label">Time In</label>
+                            <input type="time" name="time_in" class="form-control" required>
+                        </div>
+
+                        <!-- Time Out -->
+                        <div class="col-md-6">
+                            <label class="form-label">Time Out</label>
+                            <input type="time" name="time_out" class="form-control" required>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg px-5">
+                                <i class="fa-solid fa-check"></i> Book Slot
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

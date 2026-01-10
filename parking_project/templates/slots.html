@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Parking Slots{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="fw-bold text-primary">
+        <i class="fa-solid fa-square-parking"></i> Parking Slots Status
+    </h2>
+    <p class="text-muted">View available and occupied parking slots in real time</p>
+</div>
+
+<!-- Legend -->
+<div class="d-flex justify-content-center mb-4">
+    <span class="badge bg-success me-3 px-3 py-2">Available</span>
+    <span class="badge bg-danger px-3 py-2">Occupied</span>
+</div>
+
+<!-- Parking Slots Grid -->
+<div class="row g-4">
+
+    <!-- Slot A1 -->
+    <div class="col-md-3 col-sm-6">
+        <div class="card text-center shadow border-success">
+            <div class="card-body">
+                <i class="fa-solid fa-car fa-2x text-success mb-2"></i>
+                <h5 class="card-title">Slot A1</h5>
+                <span class="badge bg-success">Available</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slot A2 -->
+    <div class="col-md-3 col-sm-6">
+        <div class="card text-center shadow border-danger">
+            <div class="card-body">
+                <i class="fa-solid fa-car fa-2x text-danger mb-2"></i>
+                <h5 class="card-title">Slot A2</h5>
+                <span class="badge bg-danger">Occupied</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slot B1 -->
+    <div class="col-md-3 col-sm-6">
+        <div class="card text-center shadow border-success">
+            <div class="card-body">
+                <i class="fa-solid fa-car fa-2x text-success mb-2"></i>
+                <h5 class="card-title">Slot B1</h5>
+                <span class="badge bg-success">Available</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slot B2 -->
+    <div class="col-md-3 col-sm-6">
+        <div class="card text-center shadow border-danger">
+            <div class="card-body">
+                <i class="fa-solid fa-car fa-2x text-danger mb-2"></i>
+                <h5 class="card-title">Slot B2</h5>
+                <span class="badge bg-danger">Occupied</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Action Button -->
+<div class="text-center mt-5">
+    <a href="{% url 'booking' %}" class="btn btn-primary btn-lg">
+        <i class="fa-solid fa-calendar-check"></i> Book a Parking Slot
+    </a>
+</div>
+
+{% endblock %}
